@@ -27,10 +27,9 @@ def lambda_handler(event, context):
     
     # Make archive of this directory
     shutil.make_archive('/tmp/python', 'zip', '/tmp/python')
-    os.rename('/tmp/python.zip', '/tmp/'+archive_name)
-    
+
     #Upload it on s3 bucket
-    upload_file('/tmp/'+ archive_name, s3_bucket, s3_key )
+    upload_file('/tmp/python.zip', s3_bucket, s3_key )
     
     # Publish the layer
     client = boto3.client('lambda')

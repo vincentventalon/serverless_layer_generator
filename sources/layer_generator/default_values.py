@@ -10,7 +10,7 @@ REQUIREMENT_TXT = [
     "scrapy",
     "selenium"
     ]
-S3_BUCKET = "vv-scraping-utils-eu"
+S3_BUCKET = "change-me"
 S3_PREFIX_KEY = 'lambda_fonctions/'
 ARCHIVE_NAME = "python.zip"
 RUNTIMES = ["python3.8"]
