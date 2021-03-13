@@ -3,9 +3,11 @@
 """
 Licence : GNU GPL
 
+This function is used to download, store on S3 and create a new layer for python3 librairies.
+
 Limitations
     Only python3.8 runtime is fully supported with this Lambda Layer maker as gcc packaged in this lambda is v7.3.1. 
-C++ python librairies may not work with other python runtimes 
+    Please checkout python3.7- branch for Python 3.7 and less support    
 
 """
 
@@ -24,7 +26,8 @@ def lambda_handler(event, context):
     install_requirement(download_directory, requirement_txt)
     
     # Make archive of this directory
-    shutil.make_archive(download_directory, 'zip', download_directory)
+    shutil.make_archive('/tmp/python', 'zip', '/tmp/python')
+    os.rename('/tmp/python.zip', '/tmp/'+archive_name)
     
     #Upload it on s3 bucket
     upload_file('/tmp/'+ archive_name, s3_bucket, s3_key )
@@ -32,14 +35,17 @@ def lambda_handler(event, context):
     # Publish the layer
     client = boto3.client('lambda')
     response = client.publish_layer_version(
-    LayerName= layer_name,
-    Description= layer_description,
-    Content={
-        'S3Bucket': s3_bucket,
-        'S3Key': s3_key,
-    },
-    CompatibleRuntimes=runtimes,
-    LicenseInfo= licence)
+        LayerName= layer_name,
+        Description= layer_description,
+        Content={
+            'S3Bucket': s3_bucket,
+            'S3Key': s3_key,
+        },
+        CompatibleRuntimes=runtimes,
+        LicenseInfo= licence)
+        
+    # Clean the response
+    del response["ResponseMetadata"]
     
     return {
         'statusCode': 200,
@@ -50,8 +56,3 @@ def lambda_handler(event, context):
         }
         
     }
-    
-  
-    print("yo")
-    
-    

@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
-"""Module documentation goes here
-   and here
-   and ...
-"""
 
+# Constant
+DOWNLOAD_DIRECTORY = '/tmp/python/python/lib/python3.8/site-packages'
+
+
+# Default variables
 REQUIREMENT_TXT = [
+    "scrapy",
     "selenium"
     ]
 S3_BUCKET = "vv-scraping-utils-eu"
@@ -13,5 +15,5 @@ S3_PREFIX_KEY = 'lambda_fonctions/'
 ARCHIVE_NAME = "python.zip"
 RUNTIMES = ["python3.8"]
 LICENSE = "GNU GPL"
-LAYER_NAME = 'NomDuLayer'
-LAYER_DESCRIPTION = 'Description'
+LAYER_NAME = 'Layer_name'
+LAYER_DESCRIPTION = 'This is the description of the layer'
