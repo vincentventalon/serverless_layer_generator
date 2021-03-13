@@ -12,6 +12,7 @@ And it's lightnight fast.
 These instructions will get you a copy of the project up prior to deploy it on AWS using terraform.
 
 As it's compatible with C++ libraries, there is a dependency with gcc which vary with python runtime.
+
 Please use main branch for layer with python3.8 runtime and python37- branch for layer with Python 3.6 and 3.7 runtimes.
 
 There is a file call default_values.py where default values can be setup. This is optional as json feed in lamdba event take over default values (see Installing).
@@ -33,12 +34,13 @@ git clone https://github.com/vincentventalon/serverless_layer_generator.git
 ```
 
 Make some optional configurations :
-In variables.tf, you can set a defaut region or you will be asked during deploy
-Optional: In default_values.py set the bucket where you code will be uploaded and other default values
+
+* In variables.tf, you can set a defaut region or you will be asked during deploy
+* In default_values.py set the bucket where you code will be uploaded and other default values
 ```
 S3_BUCKET = "change-me"
 ```
-Optional: If you use always the same bucket you should also refine policies in main.tf : 
+* If you use always the same bucket you should also refine policies in main.tf : 
  ```
 s3 = {
       effect    = "Allow",
