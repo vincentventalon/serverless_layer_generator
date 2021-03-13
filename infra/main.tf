@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-3"
+  region = var.region
 
   # Make it faster by skipping something
   skip_get_ec2_platforms      = true
@@ -24,7 +24,7 @@ module "lambda_function" {
 
 
   layers = [
-    "arn:aws:lambda:eu-west-3:553035198032:layer:gcc-lambda2:4",
+    "arn:aws:lambda:${var.region}:553035198032:layer:gcc-lambda2:4",
   ]
 
 
