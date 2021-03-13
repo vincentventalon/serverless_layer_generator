@@ -10,15 +10,15 @@ provider "aws" {
 }
 
 module "lambda_function" {
-  source = "../../"
+  source = "terraform-aws-modules/lambda/aws"
 
-  function_name = "Serverless layer generator"
-  description   = "Serverless layer generator"
+  function_name = "Serverless_layer_generator_python3_8"
+  description   = "Serverless layer generator for python3.8 runtime"
   handler       = "index.lambda_handler"
   runtime       = "python3.8"
   publish       = true
 
-  source_path = "/../sources/layer_generator"
+  source_path = "../sources/layer_generator"
 
 
   layers = [
