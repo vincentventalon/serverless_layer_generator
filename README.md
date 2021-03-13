@@ -75,7 +75,7 @@ runtimes = ["python3.8"]
 
 ## Authors
 
-* **Vincent Ventalon** - (https://github.com/PurpleBooth)
+* **Vincent Ventalon** - (https://github.com/vincentventalon)
 
 
 ## License
