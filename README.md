@@ -12,7 +12,7 @@ And it's lightnight fast.
 These instructions will get you a copy of the project up prior to deploy it on AWS using terraform.
 
 As it's compatible with C++ libraries, there is a dependency with gcc which vary with python runtime.
-Please use main branch for layer with python3.8 runtime and python37- for layer with Python 3.6 and 3.7 runtimes.
+Please use main branch for layer with python3.8 runtime and python37- branch for layer with Python 3.6 and 3.7 runtimes.
 
 There is a file call default_values.py where default values can be setup. This is optional as json feed in lamdba event take over default values (see Installing).
 
