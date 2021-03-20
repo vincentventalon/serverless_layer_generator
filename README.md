@@ -17,6 +17,7 @@ Please use main branch for layer with python3.8 runtime and python37- branch for
 
 There is a file call default_values.py where default values can be setup. This is optional as json feed in lamdba event take over default values (see Installing).
 
+For more information see the [related medium article](https://medium.com/nerd-for-tech/python-serverless-layer-generator-for-aws-1a4faa46b097)
 
 ### Prerequisites
 
