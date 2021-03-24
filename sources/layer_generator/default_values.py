@@ -2,7 +2,7 @@
 
 
 # Constant
-DOWNLOAD_DIRECTORY = '/tmp/python/python/lib/python3.8/site-packages'
+DOWNLOAD_DIRECTORY = '/tmp/python/python/lib/python3.7/site-packages'
 
 
 # Default variables
