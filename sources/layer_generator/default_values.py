@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-
+import os
 
 # Constant
-DOWNLOAD_DIRECTORY = '/tmp/python/python/lib/python3.8/site-packages'
+DOWNLOAD_DIRECTORY = f"/tmp/python/python/lib/{os.environ['RUNTIME']}/site-packages"
 
 
 # Default variables
@@ -13,7 +13,7 @@ REQUIREMENT_TXT = [
 S3_BUCKET = "change-me"
 S3_PREFIX_KEY = 'lambda_fonctions/'
 ARCHIVE_NAME = "python.zip"
-RUNTIMES = ["python3.8"]
+RUNTIMES = [f"{os.environ['RUNTIME']}"]
 LICENSE = "GNU GPL"
 LAYER_NAME = 'Layer_name'
 LAYER_DESCRIPTION = 'This is the description of the layer'

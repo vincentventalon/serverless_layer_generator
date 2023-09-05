@@ -6,19 +6,18 @@ Licence : GNU GPL
 This function is used to download, store on S3 and create a new layer for python3 librairies.
 
 Limitations
-    Only python3.8 runtime is fully supported with this Lambda Layer maker as gcc packaged in this lambda is v7.3.1. 
-    Please checkout python3.7- branch for Python 3.7 and less support    
-
+    The runtimes currently supported go up to python3.9 because of the gcc packaged in the lambda. 
+    More recent runtimes may work but haven't been tested
 """
 
 import os
-import sys 
 import shutil
 import boto3 
 from utils import upload_file, get_variables, install_requirement
 
 def lambda_handler(event, context):
 
+    print(os.environ["RUNTIME"])
     # Get variables from event or default values
     requirement_txt, s3_bucket,archive_name,s3_prefix_key, licence, layer_name , layer_description, runtimes, s3_key, download_directory = get_variables(event)
 
