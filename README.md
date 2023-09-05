@@ -82,6 +82,7 @@ runtimes = ["python3.8"]
 ## Authors
 
 * **Vincent Ventalon** - (https://github.com/vincentventalon)
+* **Selene Petit** - (https://github.com/DrSelene)
 
 
 ## License
