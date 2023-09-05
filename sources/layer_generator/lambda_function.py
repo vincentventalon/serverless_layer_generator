@@ -17,7 +17,6 @@ from utils import upload_file, get_variables, install_requirement
 
 def lambda_handler(event, context):
 
-    print(os.environ["RUNTIME"])
     # Get variables from event or default values
     requirement_txt, s3_bucket,archive_name,s3_prefix_key, licence, layer_name , layer_description, runtimes, s3_key, download_directory = get_variables(event)
 
