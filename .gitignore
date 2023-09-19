@@ -5,6 +5,7 @@ __pycache__/
 
 # terraform stuff
 .terraform
+infra/.terraform*
 terraform.*
 infra/builds
 # C extensions

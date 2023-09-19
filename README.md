@@ -6,14 +6,14 @@ You can use it for fast prototyping, IaaC or just to deploy a layer using the AW
 
 It's compatible with C++ librairies.
 
-And it's lightnight fast.
+And it's lightning fast.
 ## Getting Started
 
 These instructions will get you a copy of the project up prior to deploy it on AWS using terraform.
 
 As it's compatible with C++ libraries, there is a dependency with gcc which vary with python runtime.
+You need to choose which runtime(s) to deploy in variables.tf
 
-Please use main branch for layer with python3.8 runtime and python37- branch for layer with Python 3.6 and 3.7 runtimes.
 
 There is a file call default_values.py where default values can be setup. This is optional as json feed in lamdba event take over default values (see Installing).
 
@@ -36,7 +36,10 @@ git clone https://github.com/vincentventalon/serverless_layer_generator.git
 
 Make some optional configurations :
 
-* In variables.tf, you can set a defaut region or you will be asked during deploy
+* In variables.tf, you can 
+- set a defaut region or you will be asked during deploy
+- choose the Python runtime(s) you want to deploy. By default it will deploy a python 3.7 and a python 3.9 lambda
+
 * In default_values.py set the bucket where you code will be uploaded and other default values
 ```
 S3_BUCKET = "change-me"
@@ -79,6 +82,7 @@ runtimes = ["python3.8"]
 ## Authors
 
 * **Vincent Ventalon** - (https://github.com/vincentventalon)
+* **Selene Petit** - (https://github.com/DrSelene)
 
 
 ## License

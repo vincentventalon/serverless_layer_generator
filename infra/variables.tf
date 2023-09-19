@@ -7,3 +7,16 @@ variable "region" {
     error_message = "Not a valid AWS region."
   }
 }
+
+variable "lambda_runtimes" {
+  description = "Map of Python runtimes and their description"
+  type        = map(object({
+    description = string
+  }))
+  default     = {
+    "python3.7" = { description = "Serverless layer generator for Python 3.7 runtime" },
+    "python3.9" = { description = "Serverless layer generator for Python 3.9 runtime" },
+    # Add more runtimes and descriptions as needed
+  }
+}
+
