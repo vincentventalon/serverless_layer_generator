@@ -9,7 +9,7 @@ module "lambda_function" {
 
   for_each = var.lambda_runtimes
 
-  function_name = "testServerless_layer_generator_${replace(each.key, ".", "_")}"
+  function_name = "Serverless_layer_generator_${replace(each.key, ".", "_")}"
   description   = each.value.description
   runtime       = each.key
 
